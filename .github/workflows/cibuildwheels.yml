@@ -3,8 +3,8 @@ name: Python wheels
 on:
   # Trigger the workflow only for tags and PRs to the main branch
   push:
-    tags:
-      - '*'
+    # tags:
+    #   - '*'
   pull_request:
     branches:
       - main
@@ -52,6 +52,12 @@ jobs:
             arch: x86_64
             cibw_pattern: "cp3{10,11,12,13,14}-win64"
             artifact_name: "windows-x86_64"
+
+          # Windows ARM64 builds (native runners)
+          - os: windows-11-arm
+            arch: x86_64
+            cibw_pattern: "cp3{10,11,12,13,14}-win_arm64"
+            artifact_name: "windows-arm64"
 
           # macOS builds (universal2)
           - os: macos-latest
