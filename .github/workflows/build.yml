@@ -40,6 +40,10 @@ jobs:
       if: matrix.numpy-version
       run: pip install "numpy==${{ matrix.numpy-version }}.*"
 
+    - name: Install torch for arm64 Windows
+      if: runner.os == 'Windows' && runner.arch == 'ARM64'
+      run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+
     - name: Build
       run: pip install -e .[test]
 
