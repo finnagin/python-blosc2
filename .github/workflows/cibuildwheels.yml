@@ -89,11 +89,11 @@ jobs:
         with:
           arch: amd64
 
-      - name: Install MSVC arm64
-        if: runner.os == 'Windows' && runner.arch == 'ARM64'
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: arm64
+      # - name: Install MSVC arm64
+      #   if: runner.os == 'Windows' && runner.arch == 'ARM64'
+      #   uses: ilammy/msvc-dev-cmd@v1
+      #   with:
+      #     arch: arm64
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v3.3
