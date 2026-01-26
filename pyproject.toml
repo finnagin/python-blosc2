@@ -96,7 +96,7 @@ test-command = "python -c \"import blosc2; blosc2.print_versions()\""
 manylinux-x86_64-image = "manylinux2014"
 manylinux-aarch64-image = "manylinux2014"
 
-[tool.cibuildwheel.overrides]
+[[tool.cibuildwheel.overrides]]
 select = "*-win_arm64"
 before-build = "python -m pip install numpy>=2.4.1"
 
